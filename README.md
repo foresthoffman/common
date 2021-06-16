@@ -3,7 +3,7 @@
 ![Current project build status on Ubuntu 18.04](https://github.com/foresthoffman/common/actions/workflows/go-ubuntu-18.04.yml/badge.svg)
 ![Current project build status on Windows Server 2019](https://github.com/foresthoffman/common/actions/workflows/go-windows-2019.yml/badge.svg)
 ![Current project build status on Ubuntu Server Latest](https://github.com/foresthoffman/common/actions/workflows/go-windows-latest.yml/badge.svg)
-![Current project build status on MacOS 11](https://github.com/foresthoffman/common/actions/workflows/go-macos-11.yml/badge.svg)
+![Current project build status on MacOS 10.15](https://github.com/foresthoffman/common/actions/workflows/go-macos-10.15.yml/badge.svg)
 ![Current project build status on MacOS Latest](https://github.com/foresthoffman/common/actions/workflows/go-macos-latest.yml/badge.svg)
 
 `common` provides helpful DRY logic common to most Go services.
