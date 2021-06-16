@@ -3,10 +3,7 @@ package common
 import (
 	"os"
 	"testing"
-	"time"
 )
-
-var now = time.Now().String()
 
 var getEnvTestCases = []struct {
 	Name          string
@@ -17,10 +14,10 @@ var getEnvTestCases = []struct {
 }{
 	{
 		Name:          "basic",
-		VarName:       "BASIC_" + now,
-		VarValue:      now,
+		VarName:       "BASIC_123",
+		VarValue:      "123",
 		VarFallback:   "",
-		ExpectedValue: now,
+		ExpectedValue: "123",
 	},
 	{
 		Name:          "fallback",
@@ -35,7 +32,11 @@ func TestGetEnv(t *testing.T) {
 	for _, testCase := range getEnvTestCases {
 		t.Run(testCase.Name, func(t *testing.T) {
 			// Setup.
-			os.Setenv(testCase.VarName, testCase.VarValue)
+			err := os.Setenv(testCase.VarName, testCase.VarValue)
+			if err != nil {
+				t.Error(err)
+				return
+			}
 
 			// Test.
 			actual := GetEnv(testCase.VarName, testCase.VarFallback)
